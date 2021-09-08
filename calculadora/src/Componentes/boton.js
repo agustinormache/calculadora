@@ -3,7 +3,7 @@ import React from 'react';
 const Boton = (props) => {
     return (
         <>
-        <button onClick={() => props.onClick }>{props.label}</button>
+        <button onClick={props.onClick} value={props.value}>{props.label}</button>
         </>
     )
 }

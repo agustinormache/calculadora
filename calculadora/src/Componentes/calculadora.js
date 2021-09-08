@@ -4,37 +4,38 @@ import Display from './display';
 
 const Calculadora = (props) => {
 
-    const [operacion, setOperacion] = useState([
-        {
-            charOperacion : 'Algo'
-        }
-    ]);
+    const [operacion, setOperacion] = useState('');
 
-    const escribir = (props) => {
-        setOperacion([{ charOperacion: operacion.charOperacion + props.value}]);
+    // Actualiza la variable operacion | Setea el display
+    const escribir = (value) => {
+        setOperacion(operacion + value);
+        console.log(operacion)
 
     }
 
+    // Calcula el resultado en base a la variable operación
     const calcular = () => {
         try {
-            const result = eval(operacion.charOperacion);
-            setOperacion([{charOperacion: result}]);
+            const resultado = eval(operacion);
+            setOperacion(resultado);
         } catch (e) {
-            this.setOperacion([{charOperacion: 'error'}])
+            this.setOperacion('error')
         }
     }
 
-    const clickListener = e => {
+    // Manejador de evento clic
+    const clickListener = (e) => {
         const value = e.target.getAttribute('value');
         switch(value) {
             case 'limpiar':
-                setOperacion([{ charOperacion: ''}]);
+                setOperacion('');
                 break;
             case 'igual':
                 calcular()
                 break;
             default:
-                escribir()
+                setOperacion(operacion + value)
+                console.log(operacion)
             }
         }
 
@@ -45,7 +46,7 @@ const Calculadora = (props) => {
             <Boton value='7' escribir={escribir} label='7' onClick={clickListener}/>
             <Boton value='8'escribir={escribir} label='8' onClick={clickListener}/>
             <Boton value='9'escribir={escribir} label='9' onClick={clickListener}/>
-            <Boton value='X'escribir={escribir} label='X' onClick={clickListener}/>
+            <Boton value='*'escribir={escribir} label='X' onClick={clickListener}/>
         </div>
         <div>
         <Boton value='4'escribir={escribir} label='4' onClick={clickListener}/>

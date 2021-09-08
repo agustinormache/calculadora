@@ -4,8 +4,8 @@ const Display = (props) => {
     return (
         <>
     <div>
-      <div >{props.value}</div>
-      <div >Algo</div>
+      <div >{props.operacion}</div>
+      <div >{props.operacion}</div>
     </div>
         </>
     )
