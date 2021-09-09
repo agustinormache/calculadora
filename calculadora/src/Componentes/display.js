@@ -3,8 +3,7 @@ import React from 'react'
 const Display = (props) => {
     return (
         <>
-    <div>
-      <div >{props.operacion}</div>
+    <div class='Display'>
       <div >{props.operacion}</div>
     </div>
         </>

@@ -1,38 +1,67 @@
-.App {
-  text-align: center;
-}
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
+/* BOTONES */
+.Boton {
+  background: #cad2c5;
+  /*display: flex;*/
+  border: 1px solid rgba(0,0,0,0.05);
+  box-sizing: border-box;
   align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  width: 25%;
+  font-size: 24px;
+  color: rgba(0, 0, 0, 0.5);
+  height: 20%;
+  min-width: 25%;
 }
 
-.App-link {
-  color: #61dafb;
+/*.Boton[data-size="2"] {
+  height: 40%;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.Boton[data-value="null"] {
+  pointer-events: none;
+}*/
+
+.Boton:hover {
+  background: #d7ddd3;
+  cursor: default;
+}
+
+/* DISPLAY */
+.Display {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  background: #2b293d;
+  height: 30px;
+  color: #80c9c9;
+  font-size: 24px;
+}
+
+/*KEYPAD*/
+.Keypad {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+  height: 80%;
+}
+
+body {
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  margin-top: 100px;
+  margin-right: 270px;
+  margin-left: 270px;
+  background-image: url(/src/img/background.jpg);
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: auto;
+}
+
+.Calculadora {
+  width: 800px;
+  height: 600px;
+  position: static;
+  margin: 25px;
 }
